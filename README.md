@@ -13,7 +13,7 @@ This repo is used to install Red Hat Process Automation Manager on Mac OSX.
 
 1. Install brew, the Mac OSX Package manager, on your mac.
 ```
-/install-brew.sh/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 2. Clone this repository, if necessary, and make the shell scripts executable
