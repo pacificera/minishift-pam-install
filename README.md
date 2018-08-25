@@ -48,6 +48,10 @@ The server is accessible via web console at:
 ```
 
 6. Install PAM
+
+Edit the configuration variables in `install-pam.sh` in order to change the server passwords from the defaults.  Then run this command:
+
+
 ```
-./install-pam
+./install-pam.sh
 ```
