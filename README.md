@@ -55,3 +55,21 @@ Edit the configuration variables in `install-pam.sh` in order to change the serv
 ```
 ./install-pam.sh
 ```
+
+7. Confirm PAM Deployment on  Minishift
+
+Navigate to the minishift cluster and open your pam project to view the deployment process:
+
+http://<your-cluster-ip-from-step-6>:8443
+
+Open the PAM project `rhpam702authenv`
+
+Wait for the 2 pods to be built
+
+While you are waiting retrieve the admin user credentials from the output of the install-pam.sh.  Search for the following lines in the terminal output:
+```
+	* KIE Admin User=adminUser
+        * KIE Admin Password=*** # generated
+```
+
+Next, in the Openshift console, go to Applications -> Routes and look for the `rhpam702authenv-rhpamcentr` entry.  Open or copy the hostname url and login with the credentials you looked up.  Example url is `http://rhpam702authenv-rhpamcentr-rhpam702authenv.192.168.64.14.nip.io`
