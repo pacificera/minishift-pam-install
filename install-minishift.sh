@@ -1,4 +1,5 @@
 #/bin/bash
+
 # see https://docs.okd.io/latest/minishift/getting-started/index.html
 # for the installation outline followed by this script
 
