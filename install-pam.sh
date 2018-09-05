@@ -3,8 +3,11 @@
 # set configuration variables
 export PROC_SERVER_PASSWORD=pspass
 export BUS_CENTRAL_PASSWORD=bcpass
-export PROJ_NAME=rhpam702authenv
+export ADMIN_USERNAME=admin
+export ADMIN_PASSWORD=admin
+export PROJ_NAME=my-project
 export OC_PAM_TEMPLATES_DIR=rhpam-7.0.2-openshift-templates
+
 
 # login admin to setup imagestreams in openshift project
 oc login --username=admin --password=admin --insecure-skip-tls-verify=true
@@ -43,10 +46,12 @@ cd ../..
 
 # create the app
 oc new-app -f $OC_PAM_TEMPLATES_DIR/templates/rhpam70-authoring.yaml \
+   -p ADMIN_USERNAME=$ADMIN_USERNAME \
+   -p ADMIN_PASSWORD=$ADMIN_PASSWORD \
    -p BUSINESS_CENTRAL_HTTPS_SECRET=businesscentral-app-secret \
    -p KIE_SERVER_HTTPS_SECRET=kieserver-app-secret \
    -p APPLICATION_NAME=$PROJ_NAME \
    -p BUSINESS_CENTRAL_HTTPS_NAME=jboss \
    -p KIE_SERVER_HTTPS_NAME=jboss \
    -p BUSINESS_CENTRAL_HTTPS_PASSWORD=$BUS_CENTRAL_PASSWORD \
-   -p KIE_SERVER_HTTPS_PASSWORD=$PROC_SERVER_PASSWORD
+   -p KIE_SERVER_HTTPS_PASSWORD=$PROC_SERVER_PASSWORD 
