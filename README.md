@@ -49,7 +49,7 @@ The server is accessible via web console at:
 
 6. Install PAM
 
-Edit the configuration variables in `install-pam.sh` in order to change the server passwords from the defaults.  Then run this command:
+Edit the configuration variables in `install-pam.sh` in order to change the server passwords from the defaults.  Set the username and password for the admin account.  Then run this command:
 
 
 ```
@@ -66,7 +66,6 @@ Open the PAM project `rhpam702authenv`
 
 Wait for the 2 pods to be built
 
-While you are waiting retrieve the admin user credentials from the output of the install-pam.sh.  Search for the following lines in the terminal output:
 ```
 	* KIE Admin User=adminUser
         * KIE Admin Password=*** # generated
